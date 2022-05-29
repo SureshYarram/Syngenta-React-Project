@@ -1,9 +1,24 @@
 
-
+import { useEffect, useState  } from "react"
 
 export const Home = ()=>{
  
+    let [arr,setArr] = useState([])
 
+
+   useEffect(()=>{
+    ColorsArr()
+        },[])
+
+
+
+    const ColorsArr = ()=>{
+        const balloonArr = Array(5)
+        .fill()
+        .map((_, i) => ({ id: i, popped: false, color: generateRandomColor() }));
+    
+            setArr([...balloonArr])
+      }
 
 
 
@@ -12,9 +27,8 @@ export const Home = ()=>{
       <h1>BALLOON GAME</h1>
       <div className="mainDiv">
             <div className="left">
-            
-                 <div> </div>
-           
+
+                 <div></div>
             </div>
             <div className="right">
              
