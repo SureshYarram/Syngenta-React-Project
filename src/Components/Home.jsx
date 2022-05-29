@@ -12,6 +12,8 @@ export const Home = ()=>{
     ColorsArr()
         },[])
 
+
+        //-------------------------- RANDOM COLOR GENERATOR FUNCTION--------------------------
         function generateRandomColor()
         {
             var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
@@ -19,6 +21,8 @@ export const Home = ()=>{
             //random color will be freshly served
         }
 
+
+        //-----------------------------------creating ARRAY with random colors-----------------------------------
     const ColorsArr = ()=>{
         const balloonArr = Array(5)
         .fill()
@@ -27,6 +31,8 @@ export const Home = ()=>{
             setColourArr([...balloonArr])
       }
 
+
+      //------------------------------ballon pushed into div---------------------------------------
         
   const PopandMove = (val)=>{
        
@@ -42,6 +48,9 @@ export const Home = ()=>{
         document.getElementById("ballonnumber").value = ""
     
   }
+
+
+  //----------------------------------ballon getting back to its position--------------------------------------
   
   const PushandMove = (val)=>{
     let arr1 = divArr;
@@ -53,6 +62,9 @@ export const Home = ()=>{
   })
     setColourArr([...colourArr])
 }
+
+
+
     return(
         <>
       <h1>BALLOON GAME</h1>
@@ -76,6 +88,8 @@ export const Home = ()=>{
                 <button onClick={()=>PopandMove(val)}>Shoot</button>
             </div>
         </div>
+
+          
 
         </>
     )
