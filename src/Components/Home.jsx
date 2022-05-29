@@ -33,22 +33,35 @@ export const Home = ()=>{
     if(val==null){
         return
     }
-         let arr1 = arr
+         let arr1 = colourArr
       let removed =  arr1.splice((val-1),1);
  
       divArr.push(...removed)
       setVal(null)
-       setArr([...arr])
+       setColourArr([...colourArr])
         document.getElementById("ballonnumber").value = ""
     
   }
+  
+  const PushandMove = (val)=>{
+    let arr1 = divArr;
+    let removed = arr1.splice(val,1);
+    colourArr.push(...removed)
 
+    colourArr.sort(function(a, b) {
+      return (a.id - b.id);
+  })
+    setColourArr([...colourArr])
+}
     return(
         <>
       <h1>BALLOON GAME</h1>
       <div className="mainDiv">
             <div className="left">
               
+            {divArr.map((el,index)=>(
+                 <div onClick={()=>PushandMove(index)} key ={el.id} style={{backgroundColor:el.color}}></div>
+             ))}
                 
             </div>
             <div className="right">   
@@ -59,7 +72,7 @@ export const Home = ()=>{
            
             </div>
             <div className="input">
-                <input type="text" id="ballonnumber" placeholder="Enter Your Ballon Number"   /> <br />
+                <input type="text" id="ballonnumber" placeholder="Enter Your Ballon Number"  onChange={(e)=>setVal(e.target.value)}  /> <br />
                 <button onClick={()=>PopandMove(val)}>Shoot</button>
             </div>
         </div>
