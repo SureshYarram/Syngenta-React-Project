@@ -13,15 +13,18 @@ h1{
 }
 
 .left{
-  margin-top: 18%;
-  height: 43%;
+  margin-top: 5%;
+  height: 60%;
   width: 34%;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 5px;
   border:  3px solid rgb(10, 10, 10);
 }
 .left>div{
-  height: 18%;
-  width: 25%;
-  margin-bottom: 5%;
+  height: 90px;
+  width: 71%;
+  margin-bottom: -50px;
   border-radius: 50%;
   border:  3px solid rgb(12, 12, 12);
 }
